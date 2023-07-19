@@ -1,0 +1,13 @@
+---
+import BaseLqyout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLqyout pageTitle={frontmatter.title}>
+  <p>Written by {frontmatter.author}</p>
+  <p>Published on: {frontmatter.pubDate.slice(0, 10)}</p>
+  <p>Written by {frontmatter.author}</p>
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+  <slot />
+</BaseLqyout>
